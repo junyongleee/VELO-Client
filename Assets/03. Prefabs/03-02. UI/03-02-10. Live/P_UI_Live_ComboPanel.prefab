@@ -49,7 +49,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4961f200764f65a4db7e36a6967de4eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VELO.UI.UI_LiveComboPanel
-  _comboTitleText: {fileID: 8600004891413690606}
   _comboCountText: {fileID: 8600004891413690606}
 --- !u!1 &8618822337494064462
 GameObject:
@@ -116,17 +115,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Combo
+  m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a17d33e46f98f5f4d8e91defea8107a4, type: 2}
-  m_sharedMaterial: {fileID: 8017440099671199218, guid: a17d33e46f98f5f4d8e91defea8107a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 6a3df12e033f463489a70fffaf477ae6, type: 2}
+  m_sharedMaterial: {fileID: -2427164502970520381, guid: 6a3df12e033f463489a70fffaf477ae6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.9411765, g: 0.92156863, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -160,7 +159,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
