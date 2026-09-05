@@ -323,9 +323,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cff35308e6f27414ca1294a65f98afd3, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -758,6 +758,7 @@ GameObject:
   - component: {fileID: 8692725774386506357}
   - component: {fileID: 4787405938645316349}
   - component: {fileID: 6065685316235149501}
+  - component: {fileID: 7176256982651778069}
   m_Layer: 5
   m_Name: P_UI_Panel_Story
   m_TagString: Untagged
@@ -910,12 +911,23 @@ MonoBehaviour:
   _episodeNumberText: {fileID: 5702593150224238063}
   _titleText: {fileID: 440901582414761826}
   _statusRoot: {fileID: 5683745492516651202}
-  _statusText: {fileID: 5214209348571704102}
   _lockIcon: {fileID: 2437699423548914346}
   _clearIcon: {fileID: 7740000000000000001}
   _newBadge: {fileID: 1041891689454119587}
   _selectionOutline: {fileID: 9214258712502696428}
   _highlight: {fileID: 7853308875814865994}
+--- !u!114 &7176256982651778069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4667903437856500063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24b1af7b61527448b9f179723f59f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_ScreenButtonSfx
 --- !u!1 &5683745492516651202
 GameObject:
   m_ObjectHideFlags: 0

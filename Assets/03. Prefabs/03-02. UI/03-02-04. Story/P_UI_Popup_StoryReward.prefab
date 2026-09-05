@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 8828849340306103827}
   - component: {fileID: 5568981656162177251}
   - component: {fileID: 3134604831213004728}
+  - component: {fileID: 5240992422031249817}
   m_Layer: 5
   m_Name: P_UI_Popup_StoryReward
   m_TagString: Untagged
@@ -407,6 +408,18 @@ MonoBehaviour:
   _closeEase: 26
   _startScale: {x: 0.5, y: 0.5, z: 0.5}
   _targetScale: {x: 1, y: 1, z: 1}
+--- !u!114 &5240992422031249817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2612919953331777137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24b1af7b61527448b9f179723f59f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_ScreenButtonSfx
 --- !u!1 &3887023681760688700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,6 +1664,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2256906606527971444}
     m_Modifications:
+    - target: {fileID: 1422524763821976895, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 616d38cc1f39ef54d9b359d351e28e10, type: 3}
     - target: {fileID: 2340456767417778429, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1745,7 +1762,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4749904588451766950, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 60
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 4749904588451766950, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1755,21 +1772,17 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 44
       objectReference: {fileID: 0}
-    - target: {fileID: 5861968369310522075, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
-      propertyPath: m_text
-      value: GEM
-      objectReference: {fileID: 0}
     - target: {fileID: 6163315191825252777, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
       propertyPath: m_Name
       value: P_UI_Panel_Reward_GEM
       objectReference: {fileID: 0}
     - target: {fileID: 7720000000000000002, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -46
+      value: -44
       objectReference: {fileID: 0}
     - target: {fileID: 7720000000000000012, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 46
+      value: 44
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1908,10 +1921,6 @@ PrefabInstance:
       propertyPath: m_text
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5861968369310522075, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
-      propertyPath: m_text
-      value: MONEY
-      objectReference: {fileID: 0}
     - target: {fileID: 6163315191825252777, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
       propertyPath: m_Name
       value: P_UI_Panel_Reward_MONEY
@@ -1949,6 +1958,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2256906606527971444}
     m_Modifications:
+    - target: {fileID: 1422524763821976895, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 33715b41451d52a44b9c043b57087a5c, type: 3}
     - target: {fileID: 1422524763821976895, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2068,10 +2081,6 @@ PrefabInstance:
     - target: {fileID: 4749904588451766950, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 44.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5861968369310522075, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
-      propertyPath: m_text
-      value: HYPE
       objectReference: {fileID: 0}
     - target: {fileID: 6163315191825252777, guid: 8050c52fb883d8841bc497b767aed684, type: 3}
       propertyPath: m_Name

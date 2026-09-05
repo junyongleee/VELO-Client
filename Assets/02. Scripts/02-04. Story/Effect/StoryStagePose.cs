@@ -39,6 +39,9 @@ public class StoryStagePose
     /// </summary>
     public async UniTask ShakeAsync(StoryEffectData effect, CancellationToken cancellationToken)
     {
+        // 떨 자리를 먼저 확보합니다. 진폭이 작아 확대도 얼마 되지 않습니다.
+        EnsureSlackFor(new Vector2(effect.Strength, effect.Strength));
+
         if (effect.IsLooping)
         {
             await StoryEffectTween.RepeatAsync(_ => ApplyShake(effect.Strength), cancellationToken);
@@ -59,14 +62,50 @@ public class StoryStagePose
             progress => _layer.SetStageScale(Mathf.Lerp(from, effect.Strength, progress)), cancellationToken);
     }
 
+    /// <summary>
+    /// 시점을 옮깁니다. 미는 동안 필요한 만큼 함께 확대해, 가장자리가 비지 않으면서도
+    /// 움직이지 않는 줄에서는 그림이 잘리지 않게 합니다.
+    ///
+    /// 훑기로 지정된 이동은 반대편 끝에서 시작합니다. 시점이 늘 가운데에 있어,
+    /// 그러지 않으면 한 줄로는 그림의 절반까지밖에 못 갑니다(StoryEffectData.IsSweep).
+    /// </summary>
     public async UniTask PanAsync(StoryEffectData effect, CancellationToken cancellationToken)
     {
-        Vector2 from = _layer.GetStageOffset();
         var to = new Vector2(effect.Strength, effect.StrengthY);
+        Vector2 from = effect.IsSweep ? -to : _layer.GetStageOffset();
+
+        float fromScale = _layer.GetStageScale();
         _settledOffset = to;
 
-        await StoryEffectTween.LerpAsync(effect.DurationSeconds,
-            progress => _layer.SetStageOffset(Vector2.Lerp(from, to, progress)), cancellationToken);
+        // 이미 더 확대되어 있으면 그대로 둡니다. 줌인 중에 시점을 옮기는 줄에서 화면이 뒤로 물러나면 안 됩니다.
+        float toScale = Mathf.Max(fromScale, _layer.GetRequiredScale(to));
+
+        // 훑기는 시작점도 화면 끝이라, 출발 전에 그만큼 확대해 두지 않으면 첫 프레임이 빕니다.
+        if (effect.IsSweep)
+        {
+            fromScale = toScale;
+            _layer.SetStageScale(toScale);
+            _layer.SetStageOffset(from);
+        }
+
+        await StoryEffectTween.LerpAsync(effect.DurationSeconds, progress =>
+        {
+            _layer.SetStageScale(Mathf.Lerp(fromScale, toScale, progress));
+            _layer.SetStageOffset(Vector2.Lerp(from, to, progress));
+        }, cancellationToken);
+    }
+
+    /// <summary>
+    /// 이만큼 밀 수 있도록 배율을 올려 둡니다. 이미 충분하면 아무것도 하지 않습니다.
+    /// </summary>
+    private void EnsureSlackFor(Vector2 offset)
+    {
+        float required = _layer.GetRequiredScale(_settledOffset + offset);
+
+        if (_layer.GetStageScale() < required)
+        {
+            _layer.SetStageScale(required);
+        }
     }
 
     private void ApplyShake(float amplitude)
